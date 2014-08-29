@@ -50,12 +50,7 @@ public class DrawChart {
 			}
 			i++;
 		}
-//		for(int row = 0; row < tableModel.getRowCount(); row++){
-//			time = Integer.parseInt((String) tableModel.getValueAt(row, 0));
-//			for(Integer colm: list){
-//				xyList.add((Number)Integer.parseInt((String) tableModel.getValueAt(row, colm)), "data" + colm, time);
-//			}
-//		}
+
 		XYSeriesCollection xySeriesCollection = new XYSeriesCollection();
 		for(XYSeries data:xyList){
 			xySeriesCollection.addSeries(data);
@@ -65,6 +60,7 @@ public class DrawChart {
 	}
 	public DrawChart(DefaultTableModel tableModel, ArrayList<Integer> list){
 		maxtime = creatDataset(tableModel, list);
+		System.out.println(maxtime);
 		chart = ChartFactory.createXYLineChart(" ", "time", " ", dataset, PlotOrientation.VERTICAL, true, false, false);
 		customizeChart();
 	}
@@ -100,7 +96,7 @@ public class DrawChart {
         axis.setLowerMargin(0.03);
         axis.setUpperMargin(0.03);
         TickUnits tickUnits = new TickUnits();
-        TickUnit unit = new NumberTickUnit((maxtime/100000)*10000);
+        TickUnit unit = new NumberTickUnit((maxtime/10));
         tickUnits.add(unit);
         axis.setStandardTickUnits(tickUnits);
         

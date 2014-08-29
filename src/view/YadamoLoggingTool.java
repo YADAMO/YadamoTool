@@ -57,7 +57,7 @@ public class YadamoLoggingTool extends JFrame implements ActionListener{
 		add(pUpper);
 		pUpper.setPreferredSize(new Dimension(width, 250));
 		add(pUnder);
-		
+
 		pUpper.add(bStart);
 		pUpper.add(bStop);
 		pUpper.add(bChart);
@@ -69,7 +69,7 @@ public class YadamoLoggingTool extends JFrame implements ActionListener{
 			ckbox[i] = new JCheckBox("data" + (i+1));
 			pUpper.add(ckbox[i]);
 		}
-		
+
 		sp = new JScrollPane(table);
 		sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		pUpper.add(sp);
@@ -158,9 +158,9 @@ public class YadamoLoggingTool extends JFrame implements ActionListener{
 				chart.createChart();
 				ChartPanel cpnl = new ChartPanel(chart.getChart());
 				pUnder.add(cpnl);
-				
+
 				this.setVisible(true);
-		
+
 			}
 		}else{
 			comPort = e.getActionCommand();
